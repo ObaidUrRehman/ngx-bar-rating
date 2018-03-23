@@ -123,7 +123,6 @@ export class BarRatingComponent implements OnInit, OnChanges, ControlValueAccess
   }
 
   private handleEnter(index) {
-    console.log('Entering: ' + index)
     if (!this.disabled && !this.readOnly) {
       /** Add selected class for rating hover */
       this.contexts.map((context, i) => {

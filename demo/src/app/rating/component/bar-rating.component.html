@@ -2,11 +2,7 @@
 
   <div class="br-units" (mouseleave)="reset()">
 
-    <!-- <div class="br-unit" *ngFor="let unit of contexts" [class.br-fraction]="unit.fraction" [class.br-selected]="unit.selected"
-      [class.br-active]="unit.active" [ngClass]="br-unit- + rate" (click)="unit.click($event)" (mouseenter)="unit.enter()">
-    </div> -->
-
-    <div class="br-unit" *ngFor="let unit of contexts" [ngClass]="unit.cssActiveClass"  (click)="unit.click($event)" (mouseenter)="unit.enter()">
+    <div class="br-unit" *ngFor="let unit of contexts" [ngClass]="unit.cssActiveClass" (click)="unit.click($event)" (mouseenter)="unit.enter()">
     </div>
   </div>
 
