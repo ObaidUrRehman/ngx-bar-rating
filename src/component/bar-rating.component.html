@@ -4,7 +4,7 @@
 
     <div class="br-unit" *ngFor="let unit of contexts" [class.br-fraction]="unit.fraction"
         [class.br-selected]="unit.selected" [class.br-active]="unit.active"
-        (click)="unit.click($event)" (mouseenter)="unit.enter()"></div>
+        [ngClass]="'br-unit-'{{unit}}" (click)="unit.click($event)" (mouseenter)="unit.enter()"></div>
 
   </div>
 

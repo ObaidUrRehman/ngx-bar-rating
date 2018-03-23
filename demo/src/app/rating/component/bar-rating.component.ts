@@ -110,7 +110,8 @@ export class BarRatingComponent implements OnInit, OnChanges, ControlValueAccess
       selected: index + 1 <= nextValue,
       fraction: (index + 1 === Math.round(nextValue) && nextValue % 1) >= 0.5,
       click: (e) => this.handleClick(e, index),
-      enter: () => this.handleEnter(index)
+      enter: () => this.handleEnter(index),
+      cssActiveClass : index + 1 <= nextValue ? `br-unit-${this.rate}` : ''
     }));
   }
 
@@ -122,12 +123,14 @@ export class BarRatingComponent implements OnInit, OnChanges, ControlValueAccess
   }
 
   private handleEnter(index) {
+    console.log('Entering: ' + index)
     if (!this.disabled && !this.readOnly) {
       /** Add selected class for rating hover */
       this.contexts.map((context, i) => {
         context.active = i <= index;
         context.fraction = false;
         context.selected = false;
+        context.cssHoverClass = context.active ? `br-unit-${index + 1}` : '';
       });
       this.nextRate = index;
       this.hover.emit(index);
